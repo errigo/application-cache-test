@@ -1,0 +1,16 @@
+{
+  "name": "2-staticfile",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "open http://localhost:3002 && curl http://localhost:3002/style.css"
+  },
+  "keywords": [],
+  "author": "Daniele Morosinotto (d.morosinotto@icloud.com)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
+}

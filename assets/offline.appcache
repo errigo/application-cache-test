@@ -1,0 +1,16 @@
+CACHE MANIFEST
+# v2 2017-03-01
+
+# if it looks like AppCache is not working,
+# you probably have a syntax error in this file
+ 
+# CACHE:
+# debug.js
+# 
+style.css
+
+NETWORK:
+
+
+FALLBACK:
+index.html offline.html
