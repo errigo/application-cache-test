@@ -28,22 +28,29 @@ function logEvent(e) {
     message += ', event: ' + type;
     message += ', status: ' + status;
     if (type == 'error' && navigator.onLine) {
-        message += ' (prolly a syntax error in manifest)';
+        message += ' (probably a syntax error in manifest)';
     }
     console.log(message);
 }
 
 // Swap in newly download files when update is ready
-window.applicationCache.addEventListener(
-    'updateready', function () {
-        window.applicationCache.swapCache();
-        console.log('swap cache has been called');
+window.applicationCache.addEventListener('updateready',
+    function () {
+        if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+            console.log("Browser downloaded a new app cache.");
+            // appCache.swapCache();
+            console.log("Swapped Application Cache");
+            if (confirm('A new version 13 of this site is available. Load it?')) {
+                window.location.reload();
+            }
+        } else {
+            console.log("Manifest didn't changed. Nothing new to serve.");
+        }
     },
-    false);
+false);
 
 // Check for manifest changes every 10 seconds
-/*
 setInterval(function () {
-    cache.update()
-}, 10000);
-*/
+    // cache.update()
+    console.log("4");
+}, 1000);

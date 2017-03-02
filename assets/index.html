@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!-- manifest="offline.appcache" -->
-<html lang="en">
+<html lang="en" manifest="offline.appcache">
 <head>
     <meta charset="UTF-8">
     <title>Node static file</title>
@@ -9,14 +8,13 @@
 <body>
     <script type="text/javascript" src="debug.js"></script>
 
-    <h1>Hello from <b>Nodejs</b></h1>
+    <h1>Hello from Nodejs <b>1</b></h1>
     <p id="online"></p>
     
     <script type="text/javascript">
-        var isOnline = window.navigator.onLine ? 'online' : 'offline';
+        var isOnline = navigator.onLine ? 'online' : 'offline';
         document.getElementById("online").innerHTML = isOnline;
     </script>
-    
     
 </body>
 </html>
