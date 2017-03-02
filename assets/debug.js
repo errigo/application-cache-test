@@ -38,9 +38,9 @@ window.applicationCache.addEventListener('updateready',
     function () {
         if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
             console.log("Browser downloaded a new app cache.");
-            // appCache.swapCache();
+            // appCache.swapCache(); // if user deletes browser cache, this is NPE
             console.log("Swapped Application Cache");
-            if (confirm('A new version 13 of this site is available. Load it?')) {
+            if (confirm('A new version of this site is available. Load it?')) {
                 window.location.reload();
             }
         } else {
@@ -48,9 +48,12 @@ window.applicationCache.addEventListener('updateready',
         }
     },
 false);
-
+/*
 // Check for manifest changes every 10 seconds
 setInterval(function () {
-    // cache.update()
-    console.log("4");
+    cache.update()
+}, 10000);
+*/
+setInterval(function () {
+    console.log("JS version: 4");
 }, 1000);
